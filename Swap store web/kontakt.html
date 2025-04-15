@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Swap store</title>
+    <style>
+        :root {
+            --bg-color: rgb(249, 250, 251);
+            --text-color: rgb(17, 24, 39);
+            --nav-bg: white;
+            --card-bg: white;
+            --text-secondary: rgb(75, 85, 99);
+            --input-bg: white;
+            --input-border: rgb(209, 213, 219);
+            --input-focus: rgb(5, 150, 105);
+            --nazev: rgb(2,2,2,);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: rgb(17, 24, 39);
+            --text-color: rgb(243, 244, 246);
+            --nav-bg: rgb(31, 41, 55);
+            --card-bg: rgb(31, 41, 55);
+            --text-secondary: rgb(156, 163, 175);
+            --input-bg: rgb(17, 24, 39);
+            --input-border: rgb(75, 85, 99);
+            --nazev: white;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav {
+            background-color: var(--nav-bg);
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s;
+        }
+
+        .nav-container {
+            text-decoration: none;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            height: 64px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--nazev);
+        }
+
+        .logo-text {
+            margin-left: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 0.375rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-color);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .theme-toggle:hover {
+            color: var(--text-color);
+        }
+
+        main {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .content {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--input-border);
+            border-radius: 0.375rem;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--input-focus);
+            box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: rgb(5, 150, 105);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: rgb(4, 120, 87);
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            color: rgb(5, 150, 105);
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--input-border);
+        }
+
+        .contact-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .social-link {
+            text-decoration: none;
+        } 
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="Hlavni stranka.html" class="logo-container">
+                <img src="logo.png" alt="Logo" style="height: 90px; margin-right: 5px;" />
+                    <path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/>
+                    <path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/>
+                    <path d="m14 16-3 3v-2.99"/>
+                    <path d="m3 3 18 18"/>
+                </svg>
+                <span class="logo-text">Swap store</span>
+            </a>
+            <div class="nav-links">
+                <a href="o nás.html">Kdo jsme?</a>
+                <a href="funguje.html">Jak to funguje?</a>
+                <a href="sluzby.html">Služby</a>
+                <a href="tym.html">Náš Tým</a>
+                <a href="partner.html">Partnerství</a>
+                <a href="napsali.html">Napsali o nás</a>
+                <a href="kontakt.html" class=active>Kontakt</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+            <div class="contact-info">
+                <h2>Jak nás kontaktovat:</h2>
+                <p>Email: info@swapstore.cz</p>
+                <p>Telefon: </p>
+                <p>Adresa: nějaka adresa</p>
+
+
+
+                <div class="social-links">
+                    <a href="https://instagram.com/swapstore" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <img src="ig.png" alt="Logo" style="height: 30px; margin-right: 0px;" />
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    <a href="https://facebook.com/swapstore" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <img src="fb.png" alt="Logo" style="height: 35px; margin-right: 0px;" />
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                        <a href="https://facebook.com/swapstore" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <img src="in.png" alt="Logo" style="height: 35px; margin-right: 0px;" />
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+        const themeToggle = document.querySelector('.theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.innerHTML = `
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/>
+                `;
+            } else {
+                themeIcon.innerHTML = `
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
